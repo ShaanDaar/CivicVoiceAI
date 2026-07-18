@@ -306,6 +306,8 @@ export default function AddComplaint({ onClose, onSuccess, wardId, wardName, loc
         throw new Error(err.detail || "Failed to save complaint.");
       }
 
+      const createdComplaint = await complaintRes.json();
+
       setResult({
         category: classification.complaintType,
         urgency: classification.urgency_score,
@@ -314,6 +316,10 @@ export default function AddComplaint({ onClose, onSuccess, wardId, wardName, loc
         text: classification.translatedText || finalTranslatedText,
         location: locationNote || wardName,
         has_media: attachments.length > 0,
+        portal_name: createdComplaint.portal_name,
+        portal_url: createdComplaint.portal_url,
+        portal_status: createdComplaint.portal_status,
+        portal_citation: createdComplaint.portal_citation,
       });
 
     } catch (err) {
@@ -349,6 +355,38 @@ export default function AddComplaint({ onClose, onSuccess, wardId, wardName, loc
             </div>
           </div>
           <p className="modal-reasoning"><em>{result.reasoning}</em></p>
+
+          {/* Guided Grievance Portal Lookup Section (Citizen Success Only) */}
+          {result.portal_name && (
+            <div 
+              className={`ticket-portal-dispatch ${result.portal_status === "Inferred" ? "portal-inferred" : "portal-verified"}`}
+              style={{ marginTop: "16px", textAlign: "left", width: "100%" }}
+            >
+              <span className="portal-label">Official Grievance Registration Link:</span>
+              <a
+                href={result.portal_url}
+                target="_blank"
+                rel="noreferrer"
+                className="portal-link"
+                style={{ display: "block", marginTop: "4px", fontSize: "14px", fontWeight: "600" }}
+              >
+                {result.portal_status === "Inferred" ? "⚠️ " : "🔗 "}
+                {result.portal_name}
+              </a>
+              {result.portal_status === "Inferred" ? (
+                <div className="portal-disclaimer-text" style={{ marginTop: "6px", fontSize: "12px" }}>
+                  <strong>Guidance:</strong> {result.portal_citation || "Inferred fallback portal; not directly verified."}
+                </div>
+              ) : (
+                <div className="portal-verified-text" style={{ marginTop: "6px", fontSize: "12px" }}>
+                  <strong>Verification Details:</strong> {result.portal_citation || "Direct official portal citation."}
+                </div>
+              )}
+              <div className="portal-general-guidance" style={{ marginTop: "6px", fontSize: "11px", opacity: 0.8 }}>
+                Note: Portal details are provided as a guide and may change; please confirm on the official site before filing.
+              </div>
+            </div>
+          )}
           
           {/* Social Draft UI Section */}
           <div style={{
