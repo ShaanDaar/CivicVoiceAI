@@ -69,6 +69,22 @@ INTAKE_API_KEY = os.getenv("INTAKE_API_KEY")
 if not INTAKE_API_KEY:
     print("WARNING: INTAKE_API_KEY is not defined. Only admin tokens will be able to access intake routes.")
 
+# ── Supabase Storage Initialization ──────────────────────────────────────────
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+SUPABASE_BUCKET = os.getenv("SUPABASE_BUCKET", "complaint-media")
+
+supabase_client = None
+if SUPABASE_URL and SUPABASE_KEY:
+    try:
+        from supabase import create_client
+        supabase_client = create_client(SUPABASE_URL, SUPABASE_KEY)
+        print("INFO: Supabase client initialized successfully for storage uploads.")
+    except Exception as e:
+        print(f"WARNING: Failed to initialize Supabase client: {e}")
+else:
+    print("INFO: Supabase credentials not found. Falling back to local disk storage.")
+
 # ── Legacy session-token auth (for developer bootstrap / dashboard toggle) ─────
 active_admin_sessions: set = set()
 admin_token_header = APIKeyHeader(name="X-Admin-Token", auto_error=False)
@@ -482,19 +498,35 @@ async def upload_complaint_media(
         file_ext = ".jpg" if type_group == "image" else ".mp4"
 
     safe_name = f"media_{secrets.token_hex(16)}{file_ext}"
-    doc_path = os.path.join(UPLOADS_DIR, safe_name)
 
-    try:
-        with open(doc_path, "wb") as buffer:
-            buffer.write(file_bytes)
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to save file: {str(e)}"
-        )
-
-    base_url = str(request.base_url).rstrip("/")
-    url = f"{base_url}/uploads/{safe_name}"
+    if supabase_client is not None:
+        try:
+            # Upload to Supabase Storage bucket
+            supabase_client.storage.from_(SUPABASE_BUCKET).upload(
+                path=safe_name,
+                file=file_bytes,
+                file_options={"content-type": content_type}
+            )
+            # Retrieve the public URL
+            url = supabase_client.storage.from_(SUPABASE_BUCKET).get_public_url(safe_name)
+        except Exception as e:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Failed to upload file to Supabase Storage: {str(e)}"
+            )
+    else:
+        # Fall back to local disk storage
+        doc_path = os.path.join(UPLOADS_DIR, safe_name)
+        try:
+            with open(doc_path, "wb") as buffer:
+                buffer.write(file_bytes)
+        except Exception as e:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Failed to save file locally: {str(e)}"
+            )
+        base_url = str(request.base_url).rstrip("/")
+        url = f"{base_url}/uploads/{safe_name}"
 
     return {"url": url, "type": type_group}
 
