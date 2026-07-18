@@ -16,7 +16,7 @@ import {
   Users, Zap, ShieldCheck, Globe, BarChart3
 } from "lucide-react";
 
-const API_BASE = "http://127.0.0.1:8000";
+import { API_BASE } from "../config";
 
 // Animated counter hook — counts up from 0 to target over ~1.2s
 function useCounter(target, duration = 1200) {

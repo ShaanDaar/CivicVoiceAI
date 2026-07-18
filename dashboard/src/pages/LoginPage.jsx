@@ -13,7 +13,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { Building2, Mail, Lock, LogIn, Eye, EyeOff } from "lucide-react";
 
-const API_BASE = "http://127.0.0.1:8000";
+import { API_BASE } from "../config";
 
 export default function LoginPage() {
   const { login } = useAuth();

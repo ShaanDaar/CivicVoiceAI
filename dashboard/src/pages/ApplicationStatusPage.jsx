@@ -22,7 +22,7 @@ import {
   MapPin, RefreshCw, Building2, AlertCircle
 } from "lucide-react";
 
-const API_BASE = "http://127.0.0.1:8000";
+import { API_BASE } from "../config";
 
 export default function ApplicationStatusPage() {
   const { token, role, login, user: authUser } = useAuth();

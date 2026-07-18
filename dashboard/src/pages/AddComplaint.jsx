@@ -23,7 +23,7 @@ import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { X, Send, RefreshCw, AlertTriangle, CheckCircle2 } from "lucide-react";
 
-const API_BASE = "http://127.0.0.1:8000";
+import { API_BASE } from "../config";
 
 export default function AddComplaint({ onClose, onSuccess, wardId, wardName, locality }) {
   const { token } = useAuth();
