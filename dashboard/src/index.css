@@ -1,0 +1,93 @@
+/* Modern Dark Slate Design System */
+@import url('https://fonts.googleapis.com/css2?family=Outlet&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Premium Warm Light Palette */
+  --bg-main: #F8F6F0;          /* Warm off-white/beige background */
+  --bg-card: #FFFFFF;          /* Pure white card backgrounds */
+  --bg-card-hover: #FFFFFF;
+  --border-color: #E6E2D8;     /* Soft warm sand border */
+  --border-color-hover: #D7D2C4;
+  
+  --text-primary: #3E2723;     /* Deep warm espresso/brown for text */
+  --text-secondary: #5D4037;   /* Medium warm brown for subtitles */
+  --text-muted: #8D6E63;       /* Muted brown/gray for captions */
+
+  /* Interactive accent states */
+  --color-primary: #8C624E;    /* Terracotta accent for main brand elements */
+  --color-primary-glow: rgba(140, 98, 78, 0.08);
+  --color-success: #2E7D32;    /* Sage Green */
+  --color-warning: #EF6C00;    /* Muted Orange */
+  --color-danger: #C62828;     /* Muted Ruby Red */
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Rounded Warm Minimal Cards */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(140, 130, 110, 0.06);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-color-hover);
+  box-shadow: 0 10px 30px rgba(140, 130, 110, 0.12);
+}
+
+/* Smooth Interactive Elements */
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F6F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #D7D2C4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BFB9AA;
+}
+
+.glow-text-primary {
+  text-shadow: none;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.pulse-indicator {
+  animation: pulse-slow 2s infinite ease-in-out;
+}
