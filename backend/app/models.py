@@ -2,6 +2,30 @@ from datetime import datetime, timezone
 from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey, Boolean, JSON
 from sqlalchemy.orm import relationship
 from .database import Base
+import json
+import os
+
+PORTALS_DATA = {}
+try:
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    portals_path = os.path.join(current_dir, "portals.json")
+    if os.path.exists(portals_path):
+        with open(portals_path, "r", encoding="utf-8") as f:
+            raw_portals = json.load(f)
+            for item in raw_portals:
+                key = (item["city"].lower().strip(), item["category"].lower().strip())
+                PORTALS_DATA[key] = item
+except Exception as e:
+    print(f"Failed to load portals.json: {e}")
+
+CATEGORY_MAP = {
+    "Water": "Water & Sanitation",
+    "Electricity": "Electricity & Power",
+    "Roads": "Roads & Drainage",
+    "Sanitation": "Waste Management",
+    "Public Safety": "Public Safety",
+    "Other": "Other"
+}
 
 
 class User(Base):
@@ -47,6 +71,7 @@ class Ward(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, unique=True, index=True, nullable=False)
     description = Column(String, nullable=True)
+    city = Column(String, default="Mumbai", nullable=False)
 
     # Relationships
     complaints = relationship("Complaint", back_populates="ward")
@@ -148,6 +173,35 @@ class Complaint(Base):
             return int(diff) if diff >= 0 else 0
         
         return None
+
+    def _get_portal_info(self) -> dict | None:
+        if not self.ward or not self.complaintType:
+            return None
+        city_name = getattr(self.ward, "city", "Mumbai") or "Mumbai"
+        city_key = city_name.lower().strip()
+        category_name = CATEGORY_MAP.get(self.complaintType, "Other")
+        category_key = category_name.lower().strip()
+        return PORTALS_DATA.get((city_key, category_key))
+
+    @property
+    def portal_name(self) -> str | None:
+        info = self._get_portal_info()
+        return info["portal_name"] if info else None
+
+    @property
+    def portal_url(self) -> str | None:
+        info = self._get_portal_info()
+        return info["portal_url"] if info else None
+
+    @property
+    def portal_status(self) -> str | None:
+        info = self._get_portal_info()
+        return info["status"] if info else None
+
+    @property
+    def portal_citation(self) -> str | None:
+        info = self._get_portal_info()
+        return info["citation"] if info else None
 
 
 class StatusHistory(Base):

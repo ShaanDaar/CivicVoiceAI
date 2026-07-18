@@ -31,6 +31,7 @@ class OriginalLanguage(str, enum.Enum):
 class WardBase(BaseModel):
     name: str
     description: str | None = None
+    city: str = "Mumbai"
 
 class WardCreate(WardBase):
     pass
@@ -118,6 +119,12 @@ class ComplaintResponse(BaseModel):
     timestamp: datetime
     user_id: int | None = None  # The citizen who filed it
     
+    # Portal details
+    portal_name: str | None = None
+    portal_url: str | None = None
+    portal_status: str | None = None
+    portal_citation: str | None = None
+
     # Nested relations
     ward: WardResponse | None = None
     department: DepartmentResponse | None = None

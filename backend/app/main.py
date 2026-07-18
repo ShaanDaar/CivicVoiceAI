@@ -362,6 +362,18 @@ def get_departments(db: Session = Depends(get_db)):
     return db.query(Department).all()
 
 
+@app.get("/portals")
+def get_portals():
+    """Retrieve all curated municipal portals for all cities."""
+    import json
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    portals_path = os.path.join(current_dir, "portals.json")
+    if os.path.exists(portals_path):
+        with open(portals_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return []
+
+
 # ══════════════════════════════════════════════════════════════════════════════
 # COMPLAINTS
 # ══════════════════════════════════════════════════════════════════════════════

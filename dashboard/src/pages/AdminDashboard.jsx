@@ -597,6 +597,32 @@ export default function AdminDashboard() {
                         <div className="meta-item"><span className="meta-label">Ward Region</span>{complaint.ward_name || `Ward ${complaint.ward_id}`}</div>
                         <div className="meta-item"><span className="meta-label">Registered Timestamp</span>{new Date(complaint.timestamp).toLocaleString()}</div>
                       </div>
+                      {complaint.portal_name && (
+                        <div className={`ticket-portal-dispatch ${complaint.portal_status === "Inferred" ? "portal-inferred" : "portal-verified"}`}>
+                          <span className="portal-label">External Dispatch Target:</span>
+                          <a
+                            href={complaint.portal_url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="portal-link"
+                          >
+                            {complaint.portal_status === "Inferred" ? "⚠️ " : "🔗 "}
+                            {complaint.portal_name}
+                          </a>
+                          {complaint.portal_status === "Inferred" ? (
+                            <div className="portal-disclaimer-text">
+                              <strong>Disclaimer:</strong> {complaint.portal_citation || "Inferred fallback portal; not directly verified."}
+                            </div>
+                          ) : (
+                            <div className="portal-verified-text">
+                              <strong>Verified Link:</strong> Direct official portal citation.
+                            </div>
+                          )}
+                          <div className="portal-general-guidance">
+                            Note: Portal details are provided as a guide and may change; please confirm on the official site before filing.
+                          </div>
+                        </div>
+                      )}
                       {complaint.original_transcription && (
                         <div className="ticket-original-text"><strong>Native Audio Text:</strong> "{complaint.original_transcription}"</div>
                       )}

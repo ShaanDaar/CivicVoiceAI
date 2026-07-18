@@ -8,18 +8,22 @@ def seed_initial_data(db: Session):
     """
     # Define sample wards
     wards_data = [
-        {"name": "Ward 1 - Dharavi North", "description": "Covers northern sectors of the Dharavi informal settlement area."},
-        {"name": "Ward 2 - Dharavi East", "description": "Covers eastern sectors and transit camps near Dharavi."},
-        {"name": "Ward 3 - Shivaji Nagar", "description": "Densely populated informal settlement area in the M-East ward."},
-        {"name": "Ward 4 - Kurla West", "description": "Low-lying settlements and mixed residential areas in Kurla."},
-        {"name": "Ward 5 - Mankhurd", "description": "Peripheral informal settlements and rehabilitation colonies."}
+        {"name": "Ward 1 - Dharavi North", "description": "Covers northern sectors of the Dharavi informal settlement area.", "city": "Mumbai"},
+        {"name": "Ward 2 - Dharavi East", "description": "Covers eastern sectors and transit camps near Dharavi.", "city": "Mumbai"},
+        {"name": "Ward 3 - Shivaji Nagar", "description": "Densely populated informal settlement area in the M-East ward.", "city": "Mumbai"},
+        {"name": "Ward 4 - Kurla West", "description": "Low-lying settlements and mixed residential areas in Kurla.", "city": "Mumbai"},
+        {"name": "Ward 5 - Mankhurd", "description": "Peripheral informal settlements and rehabilitation colonies.", "city": "Mumbai"},
+        {"name": "Ward 6 - Majestic", "description": "Central transport hub and commercial area in Bengaluru.", "city": "Bengaluru"},
+        {"name": "Ward 7 - Karol Bagh", "description": "Densely populated residential and commercial district in Delhi.", "city": "Delhi"},
+        {"name": "Ward 8 - Gachibowli", "description": "IT corridor and mixed settlement area in Hyderabad.", "city": "Hyderabad"},
+        {"name": "Ward 9 - T. Nagar", "description": "Shopping and residential hub with drainage issues in Chennai.", "city": "Chennai"}
     ]
 
     for wd in wards_data:
         # Check if ward already exists
         existing_ward = db.query(Ward).filter(Ward.name == wd["name"]).first()
         if not existing_ward:
-            db_ward = Ward(name=wd["name"], description=wd["description"])
+            db_ward = Ward(name=wd["name"], description=wd["description"], city=wd["city"])
             db.add(db_ward)
             print(f"Seeding Ward: {wd['name']}")
 

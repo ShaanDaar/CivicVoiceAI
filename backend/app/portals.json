@@ -1,0 +1,386 @@
+[
+  {
+    "city": "Bengaluru",
+    "category": "Water & Sanitation",
+    "portal_name": "Bangalore Water Supply and Sewerage Board (BWSSB)",
+    "portal_url": "https://bwssb.karnataka.gov.in",
+    "status": "Verified",
+    "citation": "Verified via Karnataka State Government Official Directory and BWSSB CRM portal (https://cms.bwssb.gov.in/module/complain/new_complaint)."
+  },
+  {
+    "city": "Bengaluru",
+    "category": "Electricity & Power",
+    "portal_name": "Bangalore Electricity Supply Company (BESCOM)",
+    "portal_url": "https://bescom.karnataka.gov.in",
+    "status": "Verified",
+    "citation": "Verified via Karnataka Power Department website and official BESCOM portal (https://bescom.karnataka.gov.in/english)."
+  },
+  {
+    "city": "Bengaluru",
+    "category": "Roads & Drainage",
+    "portal_name": "Namma Bengaluru (Sahaaya 2.0)",
+    "portal_url": "https://bbmp.gov.in",
+    "status": "Verified",
+    "citation": "Verified via Bruhat Bengaluru Mahanagara Palike (BBMP) official portal (https://bbmp.gov.in) and GBA portal (https://gba.karnataka.gov.in) which hosts the Sahaaya 2.0 grievance links."
+  },
+  {
+    "city": "Bengaluru",
+    "category": "Waste Management",
+    "portal_name": "Namma Bengaluru (Sahaaya 2.0)",
+    "portal_url": "https://bbmp.gov.in",
+    "status": "Verified",
+    "citation": "Verified via BBMP municipal waste management services linked on the official BBMP homepage (https://bbmp.gov.in)."
+  },
+  {
+    "city": "Bengaluru",
+    "category": "Public Safety",
+    "portal_name": "Bengaluru City Police",
+    "portal_url": "https://bengalurucitypolice.gov.in",
+    "status": "Inferred",
+    "citation": "Police website handles law and order; municipal safety (streetlights, open manholes) is actually managed by BBMP (https://bbmp.gov.in)."
+  },
+  {
+    "city": "Bengaluru",
+    "category": "Other",
+    "portal_name": "Namma Bengaluru (Sahaaya 2.0)",
+    "portal_url": "https://bbmp.gov.in",
+    "status": "Verified",
+    "citation": "Verified via the central public grievance registration form on the main BBMP website (https://bbmp.gov.in)."
+  },
+  {
+    "city": "Mumbai",
+    "category": "Water & Sanitation",
+    "portal_name": "Brihanmumbai Municipal Corporation (BMC) Water Department",
+    "portal_url": "https://portal.mcgm.gov.in",
+    "status": "Verified",
+    "citation": "Verified via BMC's official portal (https://portal.mcgm.gov.in) and the water billing/grievance desk listed on https://www.mcgm.gov.in."
+  },
+  {
+    "city": "Mumbai",
+    "category": "Electricity & Power",
+    "portal_name": "BEST / MSEDCL (Mahavitaran)",
+    "portal_url": "https://mahadiscom.in",
+    "status": "Inferred",
+    "citation": "MSEDCL is default; BEST/Adani/Tata are localized discoms depending on the exact ward address."
+  },
+  {
+    "city": "Mumbai",
+    "category": "Roads & Drainage",
+    "portal_name": "BMC Unified Grievance Redressal System",
+    "portal_url": "https://portal.mcgm.gov.in",
+    "status": "Verified",
+    "citation": "Verified official BMC grievance page link: https://www.mcgm.gov.in/irj/portal/anonymous/qlcomplaintreg."
+  },
+  {
+    "city": "Mumbai",
+    "category": "Waste Management",
+    "portal_name": "MyBMC Swachhata / BMC Solid Waste Management",
+    "portal_url": "https://portal.mcgm.gov.in",
+    "status": "Verified",
+    "citation": "Verified Swachh Bharat and clean city registration portal listed on MCGM website (https://portal.mcgm.gov.in)."
+  },
+  {
+    "city": "Mumbai",
+    "category": "Public Safety",
+    "portal_name": "Mumbai City Police",
+    "portal_url": "https://mumbaipolice.gov.in",
+    "status": "Inferred",
+    "citation": "Civil safety issues like structural collapses or streetlights belong to BMC (https://portal.mcgm.gov.in); police site is for crime/law."
+  },
+  {
+    "city": "Mumbai",
+    "category": "Other",
+    "portal_name": "BMC Citizen Portal",
+    "portal_url": "https://portal.mcgm.gov.in",
+    "status": "Verified",
+    "citation": "Verified central helpdesk/IPGRS directory on the primary MCGM portal (https://portal.mcgm.gov.in)."
+  },
+  {
+    "city": "Delhi",
+    "category": "Water & Sanitation",
+    "portal_name": "Delhi Jal Board (DJB) RMS",
+    "portal_url": "https://djb.gov.in",
+    "status": "Verified",
+    "citation": "Verified direct online grievance registry at https://djb.gov.in/DJBRMSPortal/portal/grievenceRegister.html."
+  },
+  {
+    "city": "Delhi",
+    "category": "Electricity & Power",
+    "portal_name": "Delhi Government Power Department",
+    "portal_url": "https://delhi.gov.in",
+    "status": "Inferred",
+    "citation": "Electricity providers vary by ward (BSES/Tata Power); Delhi Govt site is a general fallback."
+  },
+  {
+    "city": "Delhi",
+    "category": "Roads & Drainage",
+    "portal_name": "Municipal Corporation of Delhi (MCD)",
+    "portal_url": "https://mcdonline.nic.in",
+    "status": "Verified",
+    "citation": "Verified from MCD Online grievance system at https://mcdonline.nic.in."
+  },
+  {
+    "city": "Delhi",
+    "category": "Waste Management",
+    "portal_name": "Municipal Corporation of Delhi (MCD)",
+    "portal_url": "https://mcdonline.nic.in",
+    "status": "Verified",
+    "citation": "Verified web-based grievance interface on the unified MCD portal (https://mcdonline.nic.in), resolving MCD 311 app mapping."
+  },
+  {
+    "city": "Delhi",
+    "category": "Public Safety",
+    "portal_name": "Delhi Police",
+    "portal_url": "https://delhipolice.gov.in",
+    "status": "Inferred",
+    "citation": "Road safety hazards (streetlights, potholes) belong to MCD (https://mcdonline.nic.in) or PWD, not Delhi Police."
+  },
+  {
+    "city": "Delhi",
+    "category": "Other",
+    "portal_name": "Delhi PGMS",
+    "portal_url": "https://pgms.delhi.gov.in",
+    "status": "Verified",
+    "citation": "Verified official Delhi Public Grievance Monitoring System site (https://pgms.delhi.gov.in)."
+  },
+  {
+    "city": "Hyderabad",
+    "category": "Water & Sanitation",
+    "portal_name": "Hyderabad Metropolitan Water Supply & Sewerage Board (HMWSSB)",
+    "portal_url": "https://hyderabadwater.gov.in",
+    "status": "Verified",
+    "citation": "Verified customer services and grievance links on the official HMWSSB website (https://www.hyderabadwater.gov.in)."
+  },
+  {
+    "city": "Hyderabad",
+    "category": "Electricity & Power",
+    "portal_name": "Southern Power (TSSPDCL)",
+    "portal_url": "https://tssouthernpower.com",
+    "status": "Verified",
+    "citation": "Verified official TSSPDCL customer billing and grievance website (https://www.tssouthernpower.com)."
+  },
+  {
+    "city": "Hyderabad",
+    "category": "Roads & Drainage",
+    "portal_name": "Greater Hyderabad Municipal Corporation (GHMC)",
+    "portal_url": "https://ghmc.gov.in",
+    "status": "Verified",
+    "citation": "Verified from GHMC Online Services and Grievance tab at https://www.ghmc.gov.in."
+  },
+  {
+    "city": "Hyderabad",
+    "category": "Waste Management",
+    "portal_name": "Greater Hyderabad Municipal Corporation (GHMC)",
+    "portal_url": "https://ghmc.gov.in",
+    "status": "Verified",
+    "citation": "Verified solid waste sanitation complaint page on the main GHMC portal (https://www.ghmc.gov.in)."
+  },
+  {
+    "city": "Hyderabad",
+    "category": "Public Safety",
+    "portal_name": "Hyderabad City Police",
+    "portal_url": "https://hyderabadpolice.gov.in",
+    "status": "Inferred",
+    "citation": "Civic safety issues like streetlights belong to GHMC (https://ghmc.gov.in); police portal is for security."
+  },
+  {
+    "city": "Hyderabad",
+    "category": "Other",
+    "portal_name": "Telangana State CPGRAMS / GHMC",
+    "portal_url": "https://ghmc.gov.in",
+    "status": "Verified",
+    "citation": "Verified general grievance submission on the official GHMC website (https://www.ghmc.gov.in)."
+  },
+  {
+    "city": "Chennai",
+    "category": "Water & Sanitation",
+    "portal_name": "Chennai Metro Water (CMWSSB)",
+    "portal_url": "https://chennaimetrowater.tn.gov.in",
+    "status": "Verified",
+    "citation": "Verified official CMWSSB customer grievance portal (https://cms-cmwssb.tn.gov.in/ and main homepage https://chennaimetrowater.tn.gov.in)."
+  },
+  {
+    "city": "Chennai",
+    "category": "Electricity & Power",
+    "portal_name": "Tamil Nadu Generation and Distribution Corp (TANGEDCO)",
+    "portal_url": "https://tangedco.gov.in",
+    "status": "Verified",
+    "citation": "Verified TANGEDCO customer service and billing/complaint pages at https://tangedco.gov.in."
+  },
+  {
+    "city": "Chennai",
+    "category": "Roads & Drainage",
+    "portal_name": "Greater Chennai Corporation (GCC)",
+    "portal_url": "https://gccservices.in/pgr",
+    "status": "Verified",
+    "citation": "Verified via official GCC Public Grievance and Redressal (PGR) page: https://gccservices.in/pgr."
+  },
+  {
+    "city": "Chennai",
+    "category": "Waste Management",
+    "portal_name": "Greater Chennai Corporation (GCC) / Namma Chennai",
+    "portal_url": "https://gccservices.in/pgr",
+    "status": "Verified",
+    "citation": "Verified solid waste and garbage complaint desk on the official GCC services PGR site (https://gccservices.in/pgr)."
+  },
+  {
+    "city": "Chennai",
+    "category": "Public Safety",
+    "portal_name": "Tamil Nadu Police",
+    "portal_url": "https://eservices.tnpolice.gov.in",
+    "status": "Inferred",
+    "citation": "Police portal; civil infrastructure safety is handled by GCC (https://gccservices.in/pgr)."
+  },
+  {
+    "city": "Chennai",
+    "category": "Other",
+    "portal_name": "GCC Grievance Portal",
+    "portal_url": "https://gccservices.in/pgr",
+    "status": "Verified",
+    "citation": "Verified central grievance filing on the official GCC services PGR site (https://gccservices.in/pgr)."
+  },
+  {
+    "city": "Kolkata",
+    "category": "Water & Sanitation",
+    "portal_name": "Kolkata Municipal Corporation (KMC) Water Supply",
+    "portal_url": "https://kmcgov.in",
+    "status": "Verified",
+    "citation": "Verified KMC online complaint page: https://www.kmcgov.in/KMCPortal/jsp/ComplaintProcedure.jsp."
+  },
+  {
+    "city": "Kolkata",
+    "category": "Electricity & Power",
+    "portal_name": "Calcutta Electric Supply Corporation (CESC)",
+    "portal_url": "https://cesc.co.in",
+    "status": "Verified",
+    "citation": "Verified official CESC private/public utility website at https://www.cesc.co.in."
+  },
+  {
+    "city": "Kolkata",
+    "category": "Roads & Drainage",
+    "portal_name": "Kolkata Municipal Corporation (KMC)",
+    "portal_url": "https://kmcgov.in",
+    "status": "Verified",
+    "citation": "Verified KMC online grievance registration portal at https://www.kmcgov.in."
+  },
+  {
+    "city": "Kolkata",
+    "category": "Waste Management",
+    "portal_name": "KMC Solid Waste Management",
+    "portal_url": "https://kmcgov.in",
+    "status": "Verified",
+    "citation": "Verified solid waste complaint workflow on the main KMC portal (https://www.kmcgov.in)."
+  },
+  {
+    "city": "Kolkata",
+    "category": "Public Safety",
+    "portal_name": "Kolkata Police",
+    "portal_url": "https://kolkatapolice.gov.in",
+    "status": "Inferred",
+    "citation": "Police portal; streetlights and hazards are managed by KMC (https://kmcgov.in)."
+  },
+  {
+    "city": "Kolkata",
+    "category": "Other",
+    "portal_name": "KMC Talk to Mayor / Grievances",
+    "portal_url": "https://kmcgov.in",
+    "status": "Verified",
+    "citation": "Verified public grievance section on the main KMC website (https://www.kmcgov.in)."
+  },
+  {
+    "city": "Pune",
+    "category": "Water & Sanitation",
+    "portal_name": "Pune Municipal Corporation (PMC)",
+    "portal_url": "https://complaint.pmc.gov.in",
+    "status": "Verified",
+    "citation": "Verified official PMC complaint registration page at https://complaint.pmc.gov.in/home."
+  },
+  {
+    "city": "Pune",
+    "category": "Electricity & Power",
+    "portal_name": "MSEDCL (Mahavitaran)",
+    "portal_url": "https://mahadiscom.in",
+    "status": "Verified",
+    "citation": "Verified official MSEDCL website for Pune region consumers (https://www.mahadiscom.in and consumer portal https://wss.mahadiscom.in)."
+  },
+  {
+    "city": "Pune",
+    "category": "Roads & Drainage",
+    "portal_name": "Pune Municipal Corporation (PMC)",
+    "portal_url": "https://complaint.pmc.gov.in",
+    "status": "Verified",
+    "citation": "Verified official PMC roads and engineering grievance registry at https://complaint.pmc.gov.in."
+  },
+  {
+    "city": "Pune",
+    "category": "Waste Management",
+    "portal_name": "Pune Municipal Corporation (PMC)",
+    "portal_url": "https://complaint.pmc.gov.in",
+    "status": "Verified",
+    "citation": "Verified garbage and Swachh Pune complaint options under PMC Care portal (https://complaint.pmc.gov.in)."
+  },
+  {
+    "city": "Pune",
+    "category": "Public Safety",
+    "portal_name": "Pune Police",
+    "portal_url": "https://punepolice.gov.in",
+    "status": "Inferred",
+    "citation": "Police portal; structural safety and streetlights are managed by PMC (https://complaint.pmc.gov.in)."
+  },
+  {
+    "city": "Pune",
+    "category": "Other",
+    "portal_name": "PMC CARE Portal",
+    "portal_url": "https://complaint.pmc.gov.in",
+    "status": "Verified",
+    "citation": "Verified PMC CARE centralized grievance portal (https://complaint.pmc.gov.in)."
+  },
+  {
+    "city": "Ahmedabad",
+    "category": "Water & Sanitation",
+    "portal_name": "Ahmedabad Municipal Corporation (AMC)",
+    "portal_url": "https://complaint.ahmedabadcity.gov.in",
+    "status": "Verified",
+    "citation": "Verified official AMC Comprehensive Complaint Redressal System (CCRS) at https://complaint.ahmedabadcity.gov.in/."
+  },
+  {
+    "city": "Ahmedabad",
+    "category": "Electricity & Power",
+    "portal_name": "Torrent Power",
+    "portal_url": "https://torrentpower.com",
+    "status": "Verified",
+    "citation": "Verified Torrent Power official portal for Ahmedabad electricity consumers (https://www.torrentpower.com)."
+  },
+  {
+    "city": "Ahmedabad",
+    "category": "Roads & Drainage",
+    "portal_name": "Ahmedabad Municipal Corporation (AMC)",
+    "portal_url": "https://complaint.ahmedabadcity.gov.in",
+    "status": "Verified",
+    "citation": "Verified roads/drainage complaint options under AMC CCRS portal (https://complaint.ahmedabadcity.gov.in)."
+  },
+  {
+    "city": "Ahmedabad",
+    "category": "Waste Management",
+    "portal_name": "AMC Swachh Ahmedabad",
+    "portal_url": "https://complaint.ahmedabadcity.gov.in",
+    "status": "Verified",
+    "citation": "Verified Swachhata and waste management complaint page under AMC CCRS portal (https://complaint.ahmedabadcity.gov.in)."
+  },
+  {
+    "city": "Ahmedabad",
+    "category": "Public Safety",
+    "portal_name": "Ahmedabad Police",
+    "portal_url": "https://ahmedabadcitypolice.org",
+    "status": "Inferred",
+    "citation": "Police portal; streetlights are managed by AMC (https://complaint.ahmedabadcity.gov.in)."
+  },
+  {
+    "city": "Ahmedabad",
+    "category": "Other",
+    "portal_name": "AMC CCRS General Grievance",
+    "portal_url": "https://complaint.ahmedabadcity.gov.in",
+    "status": "Verified",
+    "citation": "Verified central grievance registration page on the official AMC CCRS portal (https://complaint.ahmedabadcity.gov.in)."
+  }
+]

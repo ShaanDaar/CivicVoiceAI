@@ -44,6 +44,18 @@ def run_db_schema_migration():
 
     # 2. Add new columns if they do not exist
     print("Checking for new columns to add...")
+    
+    # Check wards table columns
+    cursor.execute("PRAGMA table_info(wards);")
+    wards_cols = [col[1] for col in cursor.fetchall()]
+    if "city" not in wards_cols:
+        try:
+            cursor.execute("ALTER TABLE wards ADD COLUMN city TEXT DEFAULT 'Mumbai' NOT NULL;")
+            print("Successfully added 'city' column to wards table.")
+        except Exception as e:
+            print(f"Error adding city column to wards table: {e}")
+            sys.exit(1)
+
     cursor.execute("PRAGMA table_info(complaints);")
     columns = [col[1] for col in cursor.fetchall()]
 
