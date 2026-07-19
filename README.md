@@ -1,5 +1,7 @@
 # CivicVoice AI 🏛️
 
+You can visit the live deployment at https://civic-voice-ai.vercel.app/.
+
 **CivicVoice AI** is an agentic AI system designed for **SDG 11 (Sustainable Cities & Settlements)**. The platform allows residents of informal urban settlements to register infrastructure complaints (water, drainage, electricity, sanitation) via text or simulated voice notes. It automates classification, tags urgency levels using a weighted safety rubric, assigns tasks to correct municipal departments, tracks administrative resolution speeds, and reports metrics on a public dashboard.
 
 ---
